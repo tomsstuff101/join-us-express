@@ -1,0 +1,4 @@
+CREATE TABLE users (
+Email VARCHAR(255) PRIMARY KEY,
+created_at TIMESTAMP DEFAULT NOW()
+);
