@@ -25,6 +25,14 @@ app.get("/data", async (req,res) => {
     })
 })
 
+
+app.post("/register", (req,res) => {
+    addEmail(req.body.email)
+
+    console.log(req.body)
+    res.send("POST request to the homepage")
+})
+
 app.listen(3030, () => {
     console.log('listen to 3030')
     
