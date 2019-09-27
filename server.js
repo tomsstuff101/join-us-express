@@ -7,7 +7,8 @@ const app = express()
 
 // public static directory serve via 'use' a static 
 // we need the absoulute path to the public user
-app.use(express.static(path.join(__dirname, "public")))
+// NOTE: make sur 'pub' is the same as the folde I used !!
+app.use(express.static(path.join(__dirname, "pub")))
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())

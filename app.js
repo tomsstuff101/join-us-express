@@ -57,7 +57,7 @@ const addEmail = async email => {
 }
 
 
-runQuery()
+// runQuery()
 
 // addEmail()
 
