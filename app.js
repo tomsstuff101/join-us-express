@@ -1,4 +1,4 @@
-const faker = require("faker")
+// const faker = require("faker")
 const mysql = require("mysql")
 const { promisify } = require("util")
 
@@ -57,4 +57,10 @@ const addEmail = async email => {
 
 
 
-addEmail()
+// addEmail()
+
+module.exports = {
+    addEmail,
+    runQuery
+}
+
