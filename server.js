@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const path = require('path')
 const {runQuery, addEmail} = require('./app')
 
@@ -8,6 +9,9 @@ const app = express()
 // we need the absoulute path to the public user
 app.use(express.static(path.join(__dirname, "public")))
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 
 app.get("/data", async (req,res) => {
     const data = await runQuery()
@@ -16,8 +20,8 @@ app.get("/data", async (req,res) => {
     console.log(data)
 
     res.send({
-        // data: data[0].total
-        data: data
+        data: data[0].total
+        // data: data
     })
 })
 

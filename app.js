@@ -11,15 +11,17 @@ const connection = mysql.createConnection({
 
 const promisifiedQuery = promisify(connection.query).bind(connection)
 
-
+const queryString = "SELECT count(*) as total FROM users"
 
 const runQuery = async () => {
     try{
         // wait for the promise to be handled before trying to 
-        let data = await promisifiedQuery('SELECT * FROM USERS')
+        let data = await promisifiedQuery('SELECT COUNT(*) as total FROM USERS')
         // let data = await promisifiedQuery(queryString)
         // console.log(data)
+        
         return(data)
+
     }
     catch(error){
         console.log(error.sqlMessage)
@@ -55,7 +57,7 @@ const addEmail = async email => {
 }
 
 
-
+runQuery()
 
 // addEmail()
 
